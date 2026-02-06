@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report It | Premium Online Complaint Portal</title>
+    <meta name="description" content="Submit your complaints securely and efficiently through our professional portal.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="logo">Report<span>It</span></h1>
+            <p class="subtitle">Your voice matters. Submit your complaint below and we'll handle the rest.</p>
+        </header>
+
+        <section class="form-card" id="formCard">
+            <form id="complaintForm" novalidate>
+                <div class="form-grid">
+                    <!-- Personal Info Section -->
+                    <div class="form-section full-width">
+                        <h2 class="section-title"><i class="fas fa-user"></i> Personal Information</h2>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card input-icon"></i>
+                            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                        </div>
+                        <span class="error-msg">Please enter your full name</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <span class="error-msg">Please enter a valid email address</span>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone input-icon"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-890">
+                        </div>
+                    </div>
+
+                    <!-- Complaint Details Section -->
+                    <div class="form-section full-width">
+                        <h2 class="section-title"><i class="fas fa-exclamation-circle"></i> Complaint Details</h2>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-list input-icon"></i>
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="billing">Billing & Payments</option>
+                                <option value="service">Service Quality</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <span class="error-msg">Please select a category</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-heading input-icon"></i>
+                            <input type="text" id="subject" name="subject" placeholder="Brief summary" required>
+                        </div>
+                        <span class="error-msg">Please enter a subject</span>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="description">Detailed Description</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-align-left input-icon textarea-icon"></i>
+                            <textarea id="description" name="description" rows="5" placeholder="Please provide as much detail as possible..." required></textarea>
+                        </div>
+                        <span class="error-msg">Please describe your complaint</span>
+                    </div>
+
+                    <!-- File Upload Section -->
+                    <div class="input-group full-width">
+                        <label>Supporting Documents (Optional)</label>
+                        <div class="file-upload-wrapper" id="dropZone">
+                            <input type="file" id="fileAttachment" name="fileAttachment" hidden multiple>
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p>Drag & drop files or <span>browse</span></p>
+                            <span class="file-info" id="fileInfo">No files selected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Submit Complaint</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                        <div class="loader" id="loader"></div>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Success Message (Hidden by default) -->
+        <section class="success-card hidden" id="successCard">
+            <div class="success-content">
+                <div class="success-icon-wrapper">
+                    <i class="fas fa-check-circle success-icon"></i>
+                </div>
+                <h2>Submission Successful!</h2>
+                <p>Thank you for reaching out. We have received your complaint and assigned it ticket <strong>#REF-982410</strong>.</p>
+                <p>A confirmation email has been sent to your address. Our team will review the details and get back to you within 24-48 hours.</p>
+                <button type="button" class="reset-btn" id="resetBtn">Submit Another Complaint</button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 ReportIt Portal. All connections are encrypted and secure.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
